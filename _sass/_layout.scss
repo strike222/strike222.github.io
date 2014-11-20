@@ -2,9 +2,10 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
+    border-top: 5px solid #E70012;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+    padding: 1em 0 1px 0;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -258,5 +259,14 @@
         border-bottom: 1px solid #bbb;
         border-left: none;
         border-right: none;
+    }
+}
+
+.pager {
+    border-radius: 10px;
+    padding: 1em;
+    background-color: #efefef;
+    ul {
+        margin-bottom: 0;
     }
 }

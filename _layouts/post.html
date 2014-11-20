@@ -18,3 +18,15 @@ layout: default
   </article>
 
 </div>
+
+<nav class="pager">
+  <ul>
+    {% if page.next %}
+      <li>이전 : <a href="{{ page.next.permalink }}">{{ page.next.title }}</a></li>
+    {% endif %}
+    {% if page.previous %}
+      <li>다음 : <a href="{{ page.previous.permalink }}">{{ page.previous.title }}</a></li>
+    {% endif %}
+  </ul>
+</nav>
+
