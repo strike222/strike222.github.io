@@ -10,7 +10,12 @@ layout: default
     {% for post in site.posts %}
       <li>
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+            {% if post.sub_top %}
+              <span class="sub-top">{{ post.sub_top }}</span>
+            {% endif %}
+            {{ post.title }}
+          </a>
         </h2>
       </li>
     {% endfor %}
