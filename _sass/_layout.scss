@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid #E70012;
+    border-top: 5px solid $brand-color;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
     padding: 1em 0 1px 0;
@@ -231,6 +231,7 @@
 
     h2 {
         font-size: 32px;
+        line-height: 1.1;
 
         @include media-query($on-laptop) {
             font-size: 28px;
@@ -239,6 +240,7 @@
 
     h3 {
         font-size: 26px;
+        line-height: 1.1;
 
         @include media-query($on-laptop) {
             font-size: 22px;

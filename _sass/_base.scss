@@ -8,7 +8,9 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
+h1, h2, h3 {
+    word-break: keep-all;
+}
 
 /**
  * Basic styling
