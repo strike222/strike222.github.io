@@ -1,0 +1,11 @@
+# Site settings
+title: '2014 민주노총 선거 한상균·최종진·이영주 선본 정책공약 해설'
+email: 
+description: '박근혜에 맞선 총파업 선거운동본부 한상균·최종진·이영주 정책공약 해설'
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: 
+twitter_username: ddragon2009
+github_username:  
+
+# Build settings
+markdown: kramdown
