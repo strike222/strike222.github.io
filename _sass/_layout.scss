@@ -223,6 +223,11 @@
 .post-content {
     margin-bottom: $spacing-unit;
 
+    img {
+        display: block;
+        margin: 1em auto;
+    }
+
     h2 {
         font-size: 32px;
 
@@ -245,5 +250,13 @@
         @include media-query($on-laptop) {
             font-size: 18px;
         }
+    }
+
+    hr {
+        margin: 1em 0;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #bbb;
+        border-left: none;
+        border-right: none;
     }
 }
