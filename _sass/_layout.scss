@@ -294,6 +294,11 @@
         }
     }
 
+    caption {
+        text-align: left;
+        color: $grey-color-dark;
+    }
+
     .number-table {
         td {
             text-align: right;
