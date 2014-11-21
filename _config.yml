@@ -5,7 +5,6 @@ description: '박근혜에 맞선 총파업 선거운동본부 한상균·최종
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: http://strike222.github.io
 twitter_username: ddragon2009
-github_username:  
 
 # Build settings
 markdown: kramdown
