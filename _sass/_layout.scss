@@ -279,16 +279,29 @@
         border-right: none;
     }
 
+    .table-wrapper {
+        overflow: auto;
+        margin: 1em 0;
+    }
+
     table {
         border-collapse: collapse;
-        min-width: 100%;
-        margin: 1em 0;
+        min-width: 740px;
+
+        .highlight {
+            background-color: $grey-color-dark;
+            color: #fff;
+        }
     }
 
     .number-table {
         td {
             text-align: right;
         }
+    }
+
+    .fixed-table {
+        table-layout: fixed;
     }
 
     th {
