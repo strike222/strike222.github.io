@@ -7,15 +7,12 @@ $(document).ready(function(){
 
 function kakaotalk(){
 	Kakao.init('2828a8532522e98eae00aa5adccbd89a');
-    // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-    Kakao.Link.createTalkLinkButton({
-      container: '.kakaotalk',
-      label: $('title').text(),
-      webButton: {
-        text: $('title').text(),
-        url: location.href // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
-      }
-    });
+	$('.kakaotalk').click(function(e){
+		e.preventDefault();
+		Kakao.Link.sendTalkLink({
+			label: $('title').text()
+		});
+	});
 }
 
 function kakaostory(){
