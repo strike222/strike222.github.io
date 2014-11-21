@@ -278,6 +278,30 @@
         border-left: none;
         border-right: none;
     }
+
+    table {
+        border-collapse: collapse;
+        min-width: 100%;
+        margin: 1em 0;
+    }
+
+    .number-table {
+        td {
+            text-align: right;
+        }
+    }
+
+    th {
+        font-weight: bold;
+        text-align: center;
+        background-color: $grey-color-light;
+    }
+
+    th, td {
+        border: 1px solid $grey-color;
+        padding: 5px;
+        font-size: .9em;
+    }
 }
 
 .pager {
