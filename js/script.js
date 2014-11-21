@@ -5,7 +5,7 @@ $(document).ready(function () {
     // 사용할 앱의 Javascript 키를 설정해 주세요.
     Kakao.init('2828a8532522e98eae00aa5adccbd89a');
     kakaotalk();
-    //kakaostory();
+    kakaostory();
 });
 
 function kakaotalk() {
@@ -17,39 +17,46 @@ function kakaotalk() {
     });
 }
 
+function share_to_kakaostory(authObj) {
+    Kakao.API.request({
+        url: '/v1/api/story/linkinfo',
+        data: {
+            url: location.href
+        }
+    }).then(function (res) {
+        //    이전 API 호출이 성공한 경우 다음 API를 호출합니다.
+        return Kakao.API.request({
+            url: '/v1/api/story/post/link',
+            data: {
+                link_info: res
+            }
+        });
+    }).then(function (res) {
+        return Kakao.API.request({
+            url: '/v1/api/story/mystory',
+            data: {id: res.id}
+        });
+    }).then(function (res) {
+        document.getElementById('post-result').innerHTML = JSON.stringify(res);
+    }, function (err) {
+        alert(JSON.stringify(err));
+    });
+}
+
 function kakaostory() {
 
     $('.kakaostory').click(function () {
-        Kakao.Auth.login({
-            success: function () {
-                // 로그인 성공시, API를 호출합니다.
-                Kakao.API.request({
-                    url: '/v1/api/story/linkinfo',
-                    data: {
-                        url: location.href
-                    }
-                }).then(function (res) {
-                    // 이전 API 호출이 성공한 경우 다음 API를 호출합니다.
-                    return Kakao.API.request({
-                        url: '/v1/api/story/post/link',
-                        data: {
-                            link_info: res
-                        }
-                    });
-                }).then(function (res) {
-                    return Kakao.API.request({
-                        url: '/v1/api/story/mystory',
-                        data: {id: res.id}
-                    });
-                }).then(function (res) {
-                    document.getElementById('post-result').innerHTML = JSON.stringify(res);
-                }, function (err) {
-                    alert(JSON.stringify(err));
-                });
 
-            },
-            fail: function (err) {
-                alert(JSON.stringify(err))
+        Kakao.Auth.getStatus(function (status) {
+            if (status != 'connected') {
+                Kakao.Auth.login({
+                    success: share_to_kakaostory,
+                    fail: function (err) {
+                        alert(JSON.stringify(err))
+                    }
+                });
+            } else {
+                share_to_kakaostory();
             }
         });
     });
