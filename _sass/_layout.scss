@@ -94,7 +94,12 @@
     }
 }
 
-
+.links {
+    margin-top: 1px;
+    border-top: 1px solid $grey-color-light;
+    padding: 0.5em;
+    text-align: center;
+}
 
 /**
  * Site footer
@@ -258,8 +263,8 @@
 
     hr {
         margin: 1em 0;
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #bbb;
+        border-top: 1px solid $grey-color-light;
+        border-bottom: 1px solid $grey-color-dark;
         border-left: none;
         border-right: none;
     }
