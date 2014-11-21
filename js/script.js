@@ -1,14 +1,12 @@
 $(document).ready(function(){
   $('h1, h2, h3').wordBreakKeepAll({OffForIE: true});
   google_analytics();
+  Kakao.init('2828a8532522e98eae00aa5adccbd89a');
   kakaotalk();
   kakaostory();
 });
 
 function kakaotalk(){
-  // 사용할 앱의 Javascript 키를 설정해 주세요.
-    Kakao.init('2828a8532522e98eae00aa5adccbd89a');
-
     // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
     Kakao.Link.createTalkLinkButton({
       container: '.kakaotalk',
@@ -21,12 +19,8 @@ function kakaotalk(){
 }
 
 function kakaostory(){
-	Kakao.init('2828a8532522e98eae00aa5adccbd89a');
-    Kakao.Auth.createLoginButton({
-      container: '.kakaostory',
-      success: function() {
-
-        // 로그인 성공시, API를 호출합니다.
+    $('.kakaostory').click(function(){
+    	// 로그인 성공시, API를 호출합니다.
         Kakao.API.request( {
           url : '/v1/api/story/linkinfo',
           data : {
@@ -50,10 +44,6 @@ function kakaostory(){
         }, function (err) {
           alert(JSON.stringify(err));
         });
-
-      },
-      fail: function(err) {
-        alert(JSON.stringify(err))
       }
     });
 }
