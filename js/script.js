@@ -45,7 +45,9 @@ function share_to_kakaostory(authObj) {
 
 function kakaostory() {
 
-    $('.kakaostory').click(function () {
+    $('.kakaostory').click(function (e) {
+
+        e.preventDefault();
 
         Kakao.Auth.getStatus(function (status) {
             if (status != 'connected') {
