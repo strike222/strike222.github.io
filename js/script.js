@@ -5,7 +5,7 @@ $(document).ready(function () {
     // 사용할 앱의 Javascript 키를 설정해 주세요.
     Kakao.init('2828a8532522e98eae00aa5adccbd89a');
     kakaotalk();
-    kakaostory();
+    //kakaostory();
 });
 
 function kakaotalk() {
