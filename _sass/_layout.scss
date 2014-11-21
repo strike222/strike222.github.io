@@ -6,6 +6,7 @@
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
     padding: 1em 0 1px 0;
+    margin-bottom: $spacing-unit;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -181,7 +182,7 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
+    margin-bottom: $spacing-unit;
 }
 
 .page-heading {
@@ -222,7 +223,7 @@
     background-color: $brand-color;
     display: inline-block;
     padding: 2px 10px;
-    margin-bottom: 1em;
+    margin-bottom: $spacing-unit;
     border-radius: 5px;
 }
 
@@ -329,5 +330,26 @@
     background-color: #efefef;
     ul {
         margin-bottom: 0;
+    }
+}
+
+/**
+ * share icons
+ */
+.share-icons {
+    text-align: center;
+    margin-bottom: $spacing-unit;
+    span, svg {
+        vertical-align: middle;
+    }
+    svg {
+        width: 30px;
+        height: 30px;
+        &:hover path {
+            fill: $brand-color;
+        }
+    }
+    a {
+        text-decoration: none;
     }
 }
