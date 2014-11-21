@@ -4,6 +4,9 @@ layout: default
 <div class="post">
 
   <header class="post-header">
+    {% if page.category %}
+      <div class="post-category">{{ page.category }}</div>
+    {% endif %}
     <h1 class="post-title">
     	{% if page.sub_top %}
     		<span class="sub-top">{{ page.sub_top }}</span>
