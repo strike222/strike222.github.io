@@ -37,7 +37,7 @@ function share_to_kakaostory(authObj) {
             data: {id: res.id}
         });
     }).then(function (res) {
-        document.getElementById('post-result').innerHTML = JSON.stringify(res);
+        console.log(res);
     }, function (err) {
         alert(JSON.stringify(err));
     });
