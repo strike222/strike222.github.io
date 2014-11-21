@@ -10,7 +10,7 @@ function kakaotalk(){
 	$('.kakaotalk').click(function(e){
 		e.preventDefault();
 		Kakao.Link.sendTalkLink({
-			label: $('title').text()
+			label: $('title').text() + ' ' + location.href
 		});
 	});
 }
