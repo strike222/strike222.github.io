@@ -6,5 +6,8 @@
 		<a href="http://twitter.com/share?text={% if page.title %}{{ page.title | url_encode }}{{ ' | ' | url_encode }}{{ site.title | url_encode }}{% else %}{{ site.title | url_encode }}{% endif %}&url={{site.url | url_encode}}{{page.url | url_param_escate}}&via=ddragon2009" target="_blank">
 			{% include iconmonstr-twitter-3-icon.svg %}
 		</a>
+		<a href="#" class="kakaotalk" onclick="return false;">
+			{% include kakaotalk.svg %}
+		</a>
 	</div>
 </div>
